@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, League_Spartan } from "next/font/google";
+import { League_Spartan, Silkscreen } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
-})
+});
+
+const silkScreen = Silkscreen({
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${leagueSpartan.className} antialiased`}
-      >
+      <body className={`${leagueSpartan.className} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>
